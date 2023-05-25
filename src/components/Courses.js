@@ -4,41 +4,62 @@ import Data from '../data.json';
 
 
 class Courses extends Component {
+    constructor() {
+        super();
+        this.state = {
+            w_score: ""
+        }
+    }
+
+
+    onWeigthChange = (event) => {
+        this.setState({ w_score: event.target.value })
+    }
 
 
     render() {
-        return (
-            <div className="overflow-auto">
-                <table className="f6 w-100 mw8 center" cellSpacing="0">
-                    <thead>
-                        <tr className="stripe-dark">
-                            <th className="fw6 tl pa3 bg-white"> Course Code </th>
-                            <th className="fw6 tl pa3 bg-white"> Course </th>
-                            <th className="fw6 tl pa3 bg-white"> Credit Hour </th>
-                            <th className="fw6 tl pa3 bg-white"> Score  </th>
-                            <th className="fw6 tl pa3 bg-white"> Weighted Score  </th>
-                        </tr>
-                    </thead>
-                    <tbody className="lh-copy">
-                        {
-                            Data.map((course, i) => {
-                                if (Data[i].period === 'a') {
-                                    return (
-                                        <CourseData
-                                            key={i}
-                                            course_code={course.course_code}
-                                            course_name={course.course_name}
-                                            c_hours={course.c_hours}
-                                        />
-                                    )
-                                }
+        let T_credit = 0;
 
-                            })
+        // let w_s = document.querySelectorAll('.sema');
+        // console.log(w_s);
+        // // let count = 0;
+        // Data.forEach((c, i) => {
+        //     c.period === "a" ? count += 1 :
+        //         count += 0
+        // })
+
+        // let All_W_Score = new Array(count);
+        // console.log(All_W_Score);
+
+        return (
+
+            <tbody className="lh-copy">
+                {
+                    Data.map((course, i) => {
+                        if (Data[i].period === 'a') {
+                            T_credit += Number(course.c_hours);
+                            return (
+                                <CourseData
+                                    key={i}
+                                    course_code={course.course_code}
+                                    course_name={course.course_name}
+                                    c_hours={course.c_hours}
+                                    period={course.period}
+                                />
+                            )
                         }
 
-                    </tbody>
-                </table>
-            </div>
+                    })
+                }
+
+                <tr className="stipe-dark totals">
+                    {/* <td className="pa3" colSpan={2} > Semester Totals   </td> */}
+                    <td className="pa3" colSpan={2}>Total Credit Hours: {T_credit} </td>
+                    <td className="pa3" colSpan={2}> Total Weighted Score:  </td>
+                    <td className="pa3" colSpan={2}> Semester Average: </td>
+                </tr>
+            </tbody>
+
         );
     }
 }

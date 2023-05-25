@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import Courses from '../components/Courses';
 import Calcapp from '../components/Calcapp';
 
 

@@ -1,0 +1,43 @@
+[
+    {
+        "id": "1",
+        "semester": "a",
+        "name": "year 1 semester 1"
+    },
+    {
+        "id": "2",
+        "semester": "b",
+        "name": "year 1 semester 2"
+    },
+    {
+        "id": "3",
+        "semester": "c",
+        "name": "year 2 semester 1"
+    },
+    {
+        "id": "4",
+        "semester": "d",
+        "name": "year 2 semester 2"
+    },
+    {
+        "id": "5",
+        "semester": "f",
+        "name": "year 3 semester 1"
+    },
+    {
+        "id": "6",
+        "semester": "g",
+        "name": "year 3 semester 2"
+    },
+    {
+        "id": "7",
+        "semester": "h",
+        "name": "year 4 semester 1"
+    },
+    {
+        "id": "8",
+        "semester": "i",
+        "name": "year 4 semester 2"
+    }
+
+]

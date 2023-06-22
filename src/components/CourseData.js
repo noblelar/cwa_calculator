@@ -4,16 +4,16 @@ import ScoreBox from "./ScoreBox";
 
 
 class CourseData extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             weigthed_score: 0,
             score: 0,
-            grade: ""
+            grade: "",
 
         }
-
     }
+
 
     onScoreChange = (event) => {
         this.setState({ score: event.target.value })
@@ -29,18 +29,20 @@ class CourseData extends Component {
         })
         this.setState({
             weigthed_score:
-            event.target.value > 100 || event.target.value < 0 ? "Score Range(0-100)":
-                event.target.value * this.props.c_hours
+                event.target.value > 100 || event.target.value < 0 ? "Score Range(0-100)" :
+                    (event.target.value * this.props.c_hours).toFixed(2)
         })
-
+        if (this.props.onWeigthChange) {
+            this.props.onWeigthChange(event.target.value, this.props.tdId, this.props.c_hours)
+        }
 
     }
 
-    render() {
 
+    render() {
         return (
 
-            < tr className="stripe-dark" >
+            <tr className={"stripe-dark"} style={{ display: this.props.classed }} >
                 <td className="pa3"> {this.props.course_code} </td>
                 <td className="pa3"> {this.props.course_name} </td>
                 <td className="pa3"> {this.props.c_hours}</td>

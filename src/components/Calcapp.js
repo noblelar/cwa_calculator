@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import Courses from "./Courses";
 
 
+
 class Calcapp extends Component {
 
     render() {
         return (
             <div>
                 <div className="overflow-auto">
-                    <table className="f6 w-100 mw8 center" cellSpacing="0">
-                        <thead>
+                    
+                    <table className="f6 w-100 mw8 center" cellSpacing="0" >
+                        <thead id="tab_head">
                             <tr className="stripe-dark">
                                 <th className="fw6 tl pa3 bg-white"> Course Code </th>
                                 <th className="fw6 tl pa3 bg-white"> Course </th>

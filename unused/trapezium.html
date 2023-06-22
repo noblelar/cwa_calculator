@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+        .container{
+            width: 100%;
+        }
+        .trapezium-container {
+            position: relative;
+            height: 200px;
+            /* Set the desired height for the trapezium */
+            perspective: 800px;
+            /* Perspective value for 3D transformation */
+        }
+
+        .trapezium-container div {
+            height: 100%;
+            width: 50%;
+            background-color: #ccc;
+            /* Set your desired background color */
+            transform-style: preserve-3d;
+        }
+
+        .trapezium-left {
+            transform: perspective(800px) rotateY(30deg);
+            transform-origin: 100% 50%;
+        }
+
+        .trapezium-right {
+            transform: perspective(800px) rotateY(-30deg);
+            transform-origin: 0 50%;
+        }
+    </style> -->
+
+    <style>
+        
+        .trapezium {
+            width: 50%;
+            /* Set the desired width for the trapezium */
+            height: 0;
+            position: ;
+            overflow: hidden;
+        }
+
+        .trapezium:before {
+            content: "this i awesome";
+            position: absolute;
+            top: 0;
+            right: -20%;
+            overflow: hidden;
+            /* Adjust the value to control the slant of the trapezium */
+            width: calc(50%);
+            height: 70%;
+            background-color: #ccc;
+            /* Set your desired background color */
+            transform: skewX(-30deg);
+            /* Adjust the value to control the slant of the trapezium */
+            transform-origin: top left;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            /* Adjust the padding as needed */
+            background-color: #fff;
+            /* Set your desired content background color */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="container">
+
+        <div class="trapezium-container">
+            <div class="trapezium-left"></div>
+            <div class="trapezium-right"></div>
+        </div>
+    </div> -->
+
+    <div class="container">
+
+        <div class="trapezium">
+            <div class="content">
+                Your content goes here
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

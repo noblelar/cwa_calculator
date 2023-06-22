@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+table {
+  width: 100%;
+  min-width: 500px;
+}
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+tbody {
+  display: block;
+  overflow-y: auto;
+  table-layout: fixed;
+  max-height: 600px;
+}
+
+.sem_head {
+  background-color: #61dafb;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}

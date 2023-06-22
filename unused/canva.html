@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #trapezium-canvas {
+            display: block;
+            width: 100%;
+            /* Set the desired width for the canvas */
+            height: 200px;
+            /* Set the desired height for the canvas */
+            background-color: #ccc;
+            /* Set your desired background color */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <canvas id="trapezium-canvas">
+            
+        </canvas>
+        <div>
+            <img src="../src/logo.svg" alt="logo">
+        </div>
+        <div>This is new</div>
+
+    </div>
+</body>
+<script>
+    const canvas = document.getElementById('trapezium-canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set the coordinates for the trapezium's corners
+    const x1 = 100; // Top left
+    const y1 = 50;
+    const x2 = 300; // Top right
+    const y2 = 50;
+    const x3 = 400; // Bottom right
+    const y3 = 200;
+    const x4 = 0; // Bottom left
+    const y4 = 200;
+
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.lineTo(x3, y3);
+    ctx.lineTo(x4, y4);
+    ctx.closePath();
+
+    ctx.fillStyle = '#fff'; // Set your desired fill color
+    ctx.fill();
+
+</script>
+
+</html>

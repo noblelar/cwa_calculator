@@ -35,7 +35,7 @@ class CourseData extends Component {
         if (this.props.onWeigthChange) {
             this.props.onWeigthChange(event.target.value, this.props.tdId, this.props.c_hours)
         }
-
+        
     }
 
 

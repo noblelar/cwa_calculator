@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import ToggleSwitch from "./Toggle/toggler";
 
 class CWA extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            displays: "none"
+            displays: "none",
+            cwa: 0
         }
     }
 
@@ -17,22 +18,34 @@ class CWA extends Component {
         }
     }
 
+    handleCWAchange = (event) => {
+        this.setState({ cwa: event.target.value })
+        // Perform any additional logic or actions based on the toggle switch state change
+        if (this.props.onChangeCWA) {
+            this.props.onChangeCWA(event.target.value, this.props.sem);
+            //console.log(event.target.value)
+        }
+    };
+
 
     render() {
+
+        
         return (
             <tr className="stripe-dark cwa">
                 <td className="pa3 totals" colSpan={2}>
                     Cummulative Weighted Average
                 </td>
-                <td className="pa3 totals"> 85 </td>
+                <td className="pa3 totals"> {this.props.cwaScore / this.props.cwaCredit} </td>
                 <td className="pa3">
                     <input className="input-reset grow ba b--black-20 pa2 mb1 db w-100"
                         type="number"
                         max={100}
                         min={0}
                         style={{ display: this.state.displays }}
+                        onChange={this.handleCWAchange}
                     />
-                    
+
                 </td>
                 <td className="pa3 fr">
                     <ToggleSwitch onChange={this.displayCWAinput} />
